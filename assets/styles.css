@@ -63,7 +63,6 @@ code {
 .hero,
 .hero-aside,
 .project-card,
-.note-card,
 .project-hero,
 .project-meta,
 .project-section,
@@ -179,7 +178,6 @@ h4 {
 }
 
 .hero-aside,
-.note-card,
 .project-card,
 .project-meta,
 .project-section,
@@ -306,11 +304,6 @@ h4 {
 
 .arrow-link {
   font-size: 1.1rem;
-}
-
-.note-card {
-  padding: 22px 24px;
-  border-radius: var(--radius-md);
 }
 
 .project-page {
