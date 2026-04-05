@@ -391,6 +391,58 @@ h4 {
   margin-top: 14px;
 }
 
+.project-markdown h2,
+.project-markdown h3,
+.project-markdown h4 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.project-markdown h3,
+.project-markdown h4 {
+  margin-top: 28px;
+}
+
+.project-markdown p + p,
+.project-markdown p + ul,
+.project-markdown ul + p,
+.project-markdown figure + p,
+.project-markdown p + figure,
+.project-markdown ul + figure,
+.project-markdown figure + ul {
+  margin-top: 16px;
+}
+
+.project-markdown p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.project-markdown a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.project-figure {
+  margin: 22px 0;
+}
+
+.project-figure img {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.project-figure figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
 .empty-state {
   padding: 20px 0;
   color: var(--muted);
