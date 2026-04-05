@@ -216,6 +216,17 @@ h4 {
   margin-top: 12px;
 }
 
+.contact-stack {
+  margin-top: 10px;
+}
+
+.contact-email {
+  margin: 0;
+  color: #2d2723;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
 .link-pill,
 .project-link {
   display: inline-flex;

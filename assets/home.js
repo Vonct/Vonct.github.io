@@ -10,12 +10,14 @@ function renderProfile() {
   byId("profile-name").textContent = profile.name;
   byId("profile-title").textContent = profile.title;
   byId("profile-location").textContent = profile.location;
+  byId("profile-email").textContent = profile.email;
 
   const focusList = byId("profile-focuses");
   focusList.innerHTML = profile.focuses.map((item) => `<li>${item}</li>`).join("");
 
   const links = byId("profile-links");
   links.innerHTML = profile.links
+    .filter((item) => item.label.toLowerCase() !== "email")
     .map((item) => `<a class="link-pill" href="${item.href}" target="_blank" rel="noreferrer">${item.label}</a>`)
     .join("");
 }
