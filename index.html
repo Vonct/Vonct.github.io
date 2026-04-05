@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vonct | Projects</title>
+    <meta
+      name="description"
+      content="Vonct 的个人作品集，展示 AI agent、runtime engineering、CLI / Web tooling 与长期可维护系统设计。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="site-mark" href="./index.html">VONCT</a>
+        <nav class="site-nav">
+          <a href="#projects">Projects</a>
+          <a href="#profile">Profile</a>
+          <a href="#notes">Notes</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Selected work and ongoing systems</p>
+            <h1 id="hero-name">Your Name</h1>
+            <p class="hero-tagline" id="hero-tagline"></p>
+            <p class="hero-intro" id="hero-intro"></p>
+          </div>
+          <aside class="hero-aside" id="profile">
+            <div class="aside-block">
+              <span class="aside-label">Profile</span>
+              <h2 id="profile-name"></h2>
+              <p id="profile-title"></p>
+            </div>
+            <div class="aside-block">
+              <span class="aside-label">Base</span>
+              <p id="profile-location"></p>
+            </div>
+            <div class="aside-block">
+              <span class="aside-label">Focus</span>
+              <ul class="plain-list" id="profile-focuses"></ul>
+            </div>
+            <div class="aside-block">
+              <span class="aside-label">Links</span>
+              <div class="link-list" id="profile-links"></div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section projects-section" id="projects">
+          <div class="section-head">
+            <p class="eyebrow">Projects</p>
+            <h2>每个项目单独展开，不把所有细节堆在首页。</h2>
+          </div>
+          <div class="project-grid" id="project-grid"></div>
+        </section>
+
+        <section class="section notes-section" id="notes">
+          <div class="section-head">
+            <p class="eyebrow">About this site</p>
+            <h2>后续新增项目时，只需要维护数据文件。</h2>
+          </div>
+          <div class="note-card">
+            <p>
+              这个站点已经把个人信息和项目内容拆成独立数据源。后续只要编辑
+              <code>content/profile.js</code> 和 <code>content/projects.js</code>，
+              页面就会自动更新。
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./assets/home.js"></script>
+  </body>
+</html>
