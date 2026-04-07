@@ -35,7 +35,7 @@ export const projects = [
     status: "Coming Soon",
     type: "Future Work",
     summary:
-      "这里预留给你下一个项目。只要复制这个对象并修改字段，首页和详情页都会自动出现对应内容。",
+      "待更新开发过的项目（TinyUiverse.ai[小程序回忆录], AI-Applications on TC4xx-PPU）",
     tags: ["Placeholder"],
     repo: "",
     demo: "",
@@ -43,9 +43,6 @@ export const projects = [
     duration: "TBD",
     stack: ["To be updated"],
     highlights: [
-      "保留统一的项目内容格式",
-      "首页卡片和详情页自动渲染",
-      "适合继续扩展成完整作品集",
     ],
     detailMd: "./content/projects/next-project.md",
   },
