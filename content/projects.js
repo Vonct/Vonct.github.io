@@ -24,7 +24,7 @@ export const projects = [
       "支持 Web 与 CLI 双入口，共享同一套 Agent runtime 与工具能力",
       "设计 transcript / task / memory 分层机制，按相关性注入记忆以支撑多轮任务",
       "统一封装 RAG 检索、工具调用、本地 skill 挂载与 sub-agent 能力",
-      "落地 DDS-IDL 与 TC4-PPU 等垂直自动化流程，面向实验室真实开发场景",
+      "落地 DDS-IDL等垂直自动化流程，面向实验室真实开发场景",
     ],
     detailMd: "./content/projects/mylabagent.md",
   },
