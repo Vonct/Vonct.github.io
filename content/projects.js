@@ -1,5 +1,33 @@
 export const projects = [
   {
+    slug: "ourmemory",
+    name: "TinyUniverse.ai",
+    year: "2026",
+    status: "Active",
+    type: "WeChat Mini Program / AI Memory App",
+    summary:
+      "一个基于 AI 能力增强的微信回忆录小程序，围绕照片归档、空间化管理、城市识别、内容总结与视频生成，探索记忆内容的结构化整理与再表达。",
+    tags: ["WeChat Mini Program", "AI Memory", "Cloud Functions", "AI Video"],
+    repo: "https://github.com/Vonct/memories_miniprogram",
+    demo: "",
+    role: "独立设计与实现",
+    duration: "Ongoing",
+    stack: [
+      "WeChat Mini Program",
+      "Tencent CloudBase",
+      "Node.js Cloud Functions",
+      "MiniMax",
+      "EXIF / Geo Parsing",
+    ],
+    highlights: [
+      "围绕旅行、约会、日常、美食四类内容设计统一回忆录信息架构",
+      "支持房间切换与邀请码加入，让内容管理从单相册扩展到空间化组织",
+      "旅行照片自动解析 GPS / 城市信息，美食照片支持分类与评分标注",
+      "接入AI视频生成与 Agent 总结能力，增强内容再表达",
+    ],
+    detailMd: "./content/projects/ourmemory.md",
+  },
+  {
     slug: "mylabagent",
     name: "myLabAgent",
     year: "2026",
