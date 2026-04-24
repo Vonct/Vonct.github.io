@@ -17,6 +17,10 @@ Web 端更适合承接知识库、模型配置和可视化交互，保证检索�
 
 CLI / TUI 端则更偏工程化工作流，适合围绕脚本、文档、代码库与本地命令执行展开连续任务。
 
+![myLabAgent CLI 图片生成Prompt](./imgs/agent_cli_genimagePrompt.png)
+CLI 端也在根据用户使用反馈持续增加新功能，比如基于模型的图片生成。
+![myLabAgent CLI 生成的robot图片](./imgs/agent_genedImage_robotInfineon.png)
+
 ## 垂直功能开发
 
 围绕实验室实际需求，已经开始把共享 runtime 往垂直流程上推进：
