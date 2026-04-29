@@ -39,6 +39,7 @@ CLI 端也在根据用户使用反馈持续增加新功能，比如基于模型�
 Web 和 CLI 两个入口统一到同一套 Agent runtime，尽量避免一边修好了另一边又分叉。这样后续新增模型、工具、记忆层或垂直流程时，不需要重复维护两套实现。
 
 ### 会话与记忆机制
+![myLabAgent Memory 层设计](./imgs/agent_memory_design.png)
 
 在当前实现里，`session`、`task` 和 `memory` 被拆成不同层次处理：
 
@@ -47,6 +48,20 @@ Web 和 CLI 两个入口统一到同一套 Agent runtime，尽量避免一边修
 - 当前单轮内的工具结果只在本轮 loop 里继续传递，不跨轮原样回放
 - 轮次结束后把 prompt、answer、tool 摘要压缩成 `memory card`
 - 下一轮根据当前 query 对 memory 做相关性打分，挑选高相关记忆注入上下文
+- [长期记忆]
+```
+本轮对话
+-> extractor LLM 判断是否值得记，生成 memory card
+-> 程序过滤
+-> 对 memory["text"] 做 embedding
+-> vector + metadata 写入长期记忆库
+下一轮
+-> 程序构造 query
+-> 对 query 做 embedding
+-> Chroma 相似度检索
+-> metadata 过滤 scope/project
+-> 注入 text 给主 Agent
+```
 
 ### 自动化流程与通用能力沉淀
 
