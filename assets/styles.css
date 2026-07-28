@@ -259,26 +259,25 @@ h4 {
 .project-card.is-featured {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.7fr);
-  min-height: 420px;
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.75fr);
+  min-height: 360px;
   padding: 0;
   overflow: hidden;
-  color: #f1ede3;
+  color: #f4f6fb;
   background:
-    radial-gradient(circle at 86% 5%, rgba(91, 116, 104, 0.46), transparent 30%),
-    repeating-linear-gradient(102deg, rgba(255,255,255,.035) 0 1px, transparent 1px 11px),
-    #151c18;
-  border-color: rgba(54, 67, 60, 0.75);
+    radial-gradient(circle at 90% 8%, rgba(142, 244, 247, 0.11), transparent 34%),
+    #252936;
+  border-color: rgba(129, 231, 237, 0.28);
 }
 
 .project-card-media {
   position: relative;
   min-width: 0;
-  min-height: 420px;
+  min-height: 360px;
   margin: 0;
   overflow: hidden;
-  border-right: 1px solid rgba(239, 235, 224, 0.14);
-  background: #0f1512;
+  border-right: 1px solid rgba(142, 244, 247, 0.18);
+  background: #252936;
 }
 
 .project-card-media::after {
@@ -286,13 +285,14 @@ h4 {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset -30px 0 70px rgba(11, 15, 12, 0.32);
+  box-shadow: inset -30px 0 70px rgba(20, 23, 32, 0.28);
 }
 
 .project-card-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  padding: 18px;
+  object-fit: contain;
   object-position: center;
   transition: transform 700ms cubic-bezier(.22, 1, .36, 1);
 }
@@ -309,8 +309,8 @@ h4 {
   justify-content: space-between;
   gap: 18px;
   padding-top: 12px;
-  border-top: 1px solid rgba(241, 237, 227, 0.3);
-  color: rgba(241, 237, 227, 0.76);
+  border-top: 1px solid rgba(142, 244, 247, 0.3);
+  color: rgba(205, 246, 248, 0.76);
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.68rem;
   letter-spacing: 0.1em;
@@ -329,13 +329,14 @@ h4 {
 
 .project-card.is-featured .project-card-meta,
 .project-card.is-featured .project-card-summary {
-  color: rgba(232, 230, 221, 0.62);
+  color: rgba(223, 229, 240, 0.65);
 }
 
 .project-card.is-featured h3 {
   margin-top: auto;
-  color: #f4f0e7;
-  font-size: clamp(3rem, 5vw, 5.2rem);
+  color: #f6f8fc;
+  font-size: clamp(2.75rem, 4vw, 3.7rem);
+  letter-spacing: -0.035em;
 }
 
 .project-card.is-featured .project-card-summary {
@@ -343,14 +344,14 @@ h4 {
 }
 
 .project-card.is-featured .project-card-tags span {
-  color: #e0ddd3;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d9f8fa;
+  background: rgba(142, 244, 247, 0.07);
+  border: 1px solid rgba(142, 244, 247, 0.16);
 }
 
 .project-card.is-featured .project-card-footer {
-  color: #ee8a50;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ef75b4;
+  border-top: 1px solid rgba(142, 244, 247, 0.14);
   padding-top: 18px;
 }
 

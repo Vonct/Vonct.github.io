@@ -12,9 +12,7 @@ export const projects = [
     demo: "",
     role: "独立设计与实现",
     duration: "Ongoing",
-    featured: true,
     theme: "thermal",
-    cover: "./imgs/thermal_atlas_editions.png",
     gallery: [
       {
         src: "./imgs/thermal_atlas_editions.png",
@@ -92,6 +90,9 @@ export const projects = [
     demo: "",
     role: "独立设计与实现",
     duration: "Ongoing",
+    featured: true,
+    theme: "labagent",
+    cover: "./imgs/labagent_boot.png",
     stack: [
       "Python",
       "Streamlit",
