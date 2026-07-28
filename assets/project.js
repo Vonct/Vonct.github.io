@@ -97,14 +97,42 @@ if (!project) {
   `;
 } else {
   document.title = `${project.name} | Vonct`;
+  if (project.theme) {
+    root.classList.add(`theme-${project.theme}`);
+  }
   loadDetailHtml(project.detailMd).then((detailHtml) => {
+    const showcase = project.gallery?.length
+      ? `
+        <section class="project-showcase" aria-label="${project.name} 界面展示">
+          ${project.gallery.map((item, index) => `
+            <figure class="project-showcase-item item-${index + 1}">
+              <div class="showcase-label"><span>${item.label}</span><i></i></div>
+              <img src="${item.src}" alt="${item.alt}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} />
+              <figcaption>${item.caption}</figcaption>
+            </figure>
+          `).join("")}
+        </section>
+      `
+      : "";
+    const metrics = project.metrics?.length
+      ? `
+        <div class="project-proofline">
+          ${project.metrics.map((item) => `
+            <div><strong>${item.value}</strong><span>${item.label}</span></div>
+          `).join("")}
+        </div>
+      `
+      : "";
     root.innerHTML = `
       <p class="project-nav"><a href="./index.html#projects">Back to projects</a></p>
       <section class="project-hero">
         <span class="eyebrow">${project.type}</span>
         <h1>${project.name}</h1>
         <p class="project-lede">${project.summary}</p>
+        ${metrics}
       </section>
+
+      ${showcase}
 
       <div class="project-layout">
         <div class="project-main">

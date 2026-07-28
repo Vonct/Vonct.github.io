@@ -10,7 +10,7 @@ export const profile = {
   website: "",
   focuses: [
     "AI agent building",
-    "Harness Engineering",
+    "Motor Thermal Modeling",
     "Embedded AI Algorithm",
   ],
   links: [

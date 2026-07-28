@@ -32,19 +32,27 @@ function renderProjects() {
   grid.innerHTML = projects
     .map(
       (project) => `
-        <a class="project-card" href="./project.html?slug=${encodeURIComponent(project.slug)}">
-          <div class="project-card-top">
-            <span class="project-card-meta">${project.type}</span>
-            <span class="project-card-meta">${project.year}</span>
-          </div>
-          <h3>${project.name}</h3>
-          <p class="project-card-summary">${project.summary}</p>
-          <div class="project-card-tags">
-            ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
-          </div>
-          <div class="project-card-footer">
-            <span>${project.status}</span>
-            <span class="arrow-link">Open</span>
+        <a class="project-card ${project.featured ? "is-featured" : ""} ${project.theme ? `theme-${project.theme}` : ""}" href="./project.html?slug=${encodeURIComponent(project.slug)}">
+          ${project.cover ? `
+            <figure class="project-card-media">
+              <img src="${project.cover}" alt="${project.name} 项目界面" loading="${project.featured ? "eager" : "lazy"}" />
+              <figcaption><span>Featured system</span><b>Open case study ↗</b></figcaption>
+            </figure>
+          ` : ""}
+          <div class="project-card-body">
+            <div class="project-card-top">
+              <span class="project-card-meta">${project.type}</span>
+              <span class="project-card-meta">${project.year}</span>
+            </div>
+            <h3>${project.name}</h3>
+            <p class="project-card-summary">${project.summary}</p>
+            <div class="project-card-tags">
+              ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
+            </div>
+            <div class="project-card-footer">
+              <span>${project.status}</span>
+              <span class="arrow-link">Open</span>
+            </div>
           </div>
         </a>
       `,

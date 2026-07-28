@@ -1,5 +1,57 @@
 export const projects = [
   {
+    slug: "thermal-atlas",
+    name: "Thermal Atlas",
+    year: "2026",
+    status: "Active",
+    type: "Motor Thermal Research / Model Gallery + Result Agent",
+    summary:
+      "面向 LPTN、TNN、STNN 与 DSTNN 的电机温度估计实验画廊。将模型拓扑、训练版本与测试结果组织成可拖拽 stamp，并把 evidence-grounded Agent 直接嵌入对比工作流。",
+    tags: ["Result Agent", "Experiment Evidence", "Model Gallery", "Motor Thermal"],
+    repo: "https://github.com/Vonct/motor_temp_estimation_avgTemp/tree/main/apps/thermal-model-gallery",
+    demo: "",
+    role: "独立设计与实现",
+    duration: "Ongoing",
+    featured: true,
+    theme: "thermal",
+    cover: "./imgs/thermal_atlas_editions.png",
+    gallery: [
+      {
+        src: "./imgs/thermal_atlas_editions.png",
+        alt: "Thermal Atlas 中同一模型拓扑的不同训练与初始化 edition",
+        label: "01 / MODEL EVIDENCE",
+        caption: "具体拓扑与训练链路被组织成独立 stamp；用户可以把选定实验直接引用到 Agent。",
+      },
+      {
+        src: "./imgs/thermal_atlas_agent.png",
+        alt: "Thermal Atlas 内嵌 Result Agent 的 evidence tray 与引用式分析",
+        label: "02 / EMBEDDED AGENT",
+        caption: "Agent 与 Gallery 共用证据上下文，回答中的 S1、S2 可以回查到具体实验结果。",
+      },
+    ],
+    metrics: [
+      { value: "12", label: "model stamps" },
+      { value: "48", label: "profiles indexed" },
+      { value: "S1–S8", label: "frozen evidence" },
+    ],
+    stack: [
+      "React 19 / TypeScript / Vite",
+      "Tauri 2",
+      "Node.js Agent Server",
+      "OpenAI-compatible Chat Completions",
+      "SSE Streaming",
+      "SQLite",
+      "Docker Compose (optional)",
+    ],
+    highlights: [
+      "用 method、topology、state/boundary node 与 edition 组织可追溯模型档案",
+      "通过拖拽 stamp 冻结单轮 evidence，量化结论以 S1–S8 回指源报告",
+      "比较前检查 dataset、split、目标语义、初始化方式与测试 profile，避免错误排名",
+      "Kimi 通过 OpenAI-compatible provider 接入，Gallery 在 Agent 离线时仍可独立使用",
+    ],
+    detailMd: "./content/projects/thermal-atlas.md",
+  },
+  {
     slug: "ourmemory",
     name: "TinyUniverse.ai",
     year: "2026",

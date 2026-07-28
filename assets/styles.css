@@ -256,6 +256,104 @@ h4 {
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
+.project-card.is-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.7fr);
+  min-height: 420px;
+  padding: 0;
+  overflow: hidden;
+  color: #f1ede3;
+  background:
+    radial-gradient(circle at 86% 5%, rgba(91, 116, 104, 0.46), transparent 30%),
+    repeating-linear-gradient(102deg, rgba(255,255,255,.035) 0 1px, transparent 1px 11px),
+    #151c18;
+  border-color: rgba(54, 67, 60, 0.75);
+}
+
+.project-card-media {
+  position: relative;
+  min-width: 0;
+  min-height: 420px;
+  margin: 0;
+  overflow: hidden;
+  border-right: 1px solid rgba(239, 235, 224, 0.14);
+  background: #0f1512;
+}
+
+.project-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset -30px 0 70px rgba(11, 15, 12, 0.32);
+}
+
+.project-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 700ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.project-card.is-featured:hover .project-card-media img {
+  transform: scale(1.018);
+}
+
+.project-card-media figcaption {
+  position: absolute;
+  inset: auto 18px 16px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(241, 237, 227, 0.3);
+  color: rgba(241, 237, 227, 0.76);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-card-body {
+  min-width: 0;
+}
+
+.project-card.is-featured .project-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.project-card.is-featured .project-card-meta,
+.project-card.is-featured .project-card-summary {
+  color: rgba(232, 230, 221, 0.62);
+}
+
+.project-card.is-featured h3 {
+  margin-top: auto;
+  color: #f4f0e7;
+  font-size: clamp(3rem, 5vw, 5.2rem);
+}
+
+.project-card.is-featured .project-card-summary {
+  font-size: 0.96rem;
+}
+
+.project-card.is-featured .project-card-tags span {
+  color: #e0ddd3;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card.is-featured .project-card-footer {
+  color: #ee8a50;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 18px;
+}
+
 .project-card:hover {
   transform: translateY(-3px);
   border-color: rgba(155, 141, 123, 0.42);
@@ -333,6 +431,123 @@ h4 {
   font-size: 1.08rem;
   line-height: 1.9;
   color: #433a34;
+}
+
+.project-proofline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.project-proofline div {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.project-proofline strong {
+  font-family: "Newsreader", serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+}
+
+.project-proofline span {
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(260px, 0.58fr);
+  gap: 12px;
+  margin-top: 18px;
+  padding: 12px;
+  border: 1px solid #343e38;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 86% 0, rgba(75, 98, 87, 0.44), transparent 26%),
+    repeating-linear-gradient(102deg, rgba(255,255,255,.03) 0 1px, transparent 1px 11px),
+    #121814;
+  box-shadow: 0 32px 80px rgba(21, 28, 24, 0.17);
+}
+
+.project-showcase-item {
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid rgba(225, 225, 216, 0.13);
+  background: #0e1411;
+}
+
+.showcase-label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: #9aa39d;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+}
+
+.showcase-label i {
+  height: 1px;
+  background: rgba(224, 224, 214, 0.16);
+}
+
+.project-showcase-item img {
+  display: block;
+  width: 100%;
+  height: clamp(330px, 36vw, 500px);
+  object-fit: contain;
+  background: #0d1310;
+}
+
+.project-showcase-item figcaption {
+  min-height: 62px;
+  padding: 13px 3px 3px;
+  color: #99a19b;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.project-page.theme-thermal .project-hero {
+  color: #f2eee5;
+  background:
+    radial-gradient(circle at 80% 0, rgba(87, 112, 100, 0.58), transparent 32%),
+    repeating-linear-gradient(102deg, rgba(255,255,255,.035) 0 1px, transparent 1px 12px),
+    #151c18;
+  border-color: #37423c;
+}
+
+.project-page.theme-thermal .project-hero .eyebrow,
+.project-page.theme-thermal .project-nav {
+  color: #db7c46;
+}
+
+.project-page.theme-thermal .project-lede {
+  color: rgba(236, 233, 224, 0.7);
+}
+
+.project-page.theme-thermal .project-proofline {
+  border-color: rgba(235, 231, 221, 0.15);
+  background: rgba(235, 231, 221, 0.15);
+}
+
+.project-page.theme-thermal .project-proofline div {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.project-page.theme-thermal .project-proofline span {
+  color: rgba(232, 229, 219, 0.52);
 }
 
 .project-layout {
@@ -458,6 +673,22 @@ h4 {
     grid-template-columns: 1fr;
   }
 
+  .project-card.is-featured,
+  .project-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-media {
+    min-height: 340px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(239, 235, 224, 0.14);
+  }
+
+  .project-showcase-item img {
+    height: auto;
+    max-height: none;
+  }
+
   .project-side {
     position: static;
   }
@@ -485,5 +716,17 @@ h4 {
 
   .project-meta-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-proofline {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.is-featured .project-card-body {
+    padding: 22px;
+  }
+
+  .project-card.is-featured h3 {
+    margin-top: 28px;
   }
 }
