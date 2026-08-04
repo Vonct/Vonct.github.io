@@ -401,6 +401,98 @@ h4 {
   color: #322b26;
 }
 
+.project-card-visual {
+  position: relative;
+  margin: 16px 0 18px;
+  overflow: hidden;
+  border: 1px solid rgba(159, 177, 185, 0.27);
+  border-radius: 14px;
+  background: #10181d;
+}
+
+.project-card-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, rgba(11, 21, 27, 0.2), transparent 48%, rgba(61, 159, 182, 0.14));
+}
+
+.project-card-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7.2;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.76) contrast(1.05);
+  transition: transform 500ms cubic-bezier(.22, 1, .36, 1), filter 300ms ease;
+}
+
+.project-card:hover .project-card-visual img {
+  transform: scale(1.025);
+  filter: saturate(0.92) contrast(1.03);
+}
+
+.project-card-visual figcaption {
+  position: absolute;
+  inset: auto 12px 10px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(235, 246, 248, 0.86);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+.project-card-visual figcaption span {
+  font-size: 0.92rem;
+  line-height: 0.62rem;
+}
+
+.project-card.theme-formula {
+  position: relative;
+  overflow: hidden;
+  color: #eff6f7;
+  background:
+    linear-gradient(140deg, rgba(28, 90, 108, 0.18), transparent 54%),
+    repeating-linear-gradient(100deg, rgba(192, 223, 228, 0.045) 0 1px, transparent 1px 12px),
+    #142027;
+  border-color: rgba(129, 190, 202, 0.28);
+}
+
+.project-card.theme-formula::before {
+  content: "";
+  position: absolute;
+  right: -34px;
+  bottom: -57px;
+  width: 170px;
+  height: 170px;
+  border: 1px solid rgba(124, 203, 217, 0.19);
+  border-radius: 47% 53% 58% 42%;
+  transform: rotate(-25deg);
+}
+
+.project-card.theme-formula .project-card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card.theme-formula .project-card-meta,
+.project-card.theme-formula .project-card-summary {
+  color: rgba(224, 238, 240, 0.68);
+}
+
+.project-card.theme-formula .project-card-tags span {
+  color: #dff6f7;
+  background: rgba(96, 182, 197, 0.1);
+  border: 1px solid rgba(132, 215, 229, 0.18);
+}
+
+.project-card.theme-formula .project-card-footer {
+  color: #91dce4;
+}
+
 .arrow-link {
   font-size: 1.1rem;
 }
@@ -549,6 +641,56 @@ h4 {
 
 .project-page.theme-thermal .project-proofline span {
   color: rgba(232, 229, 219, 0.52);
+}
+
+.project-page.theme-formula .project-hero {
+  color: #edf7f8;
+  background:
+    radial-gradient(circle at 84% 0, rgba(42, 126, 145, 0.45), transparent 31%),
+    repeating-linear-gradient(102deg, rgba(213, 244, 245, 0.04) 0 1px, transparent 1px 12px),
+    #111d24;
+  border-color: #314e57;
+}
+
+.project-page.theme-formula .project-hero .eyebrow,
+.project-page.theme-formula .project-nav {
+  color: #81d9e5;
+}
+
+.project-page.theme-formula .project-hero h1 {
+  font-size: clamp(2.2rem, 9.4vw, 5.8rem);
+}
+
+.project-page.theme-formula .formula-year {
+  display: inline-block;
+  margin-top: 0.1em;
+  font-size: 0.76em;
+  letter-spacing: 0.01em;
+}
+
+.project-page.theme-formula .project-lede {
+  color: rgba(227, 241, 243, 0.73);
+}
+
+.project-page.theme-formula .project-proofline {
+  border-color: rgba(210, 239, 241, 0.15);
+  background: rgba(210, 239, 241, 0.15);
+}
+
+.project-page.theme-formula .project-proofline div {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.project-page.theme-formula .project-proofline span {
+  color: rgba(221, 241, 243, 0.57);
+}
+
+.project-page.theme-formula .project-showcase {
+  border-color: #2c5662;
+  background:
+    radial-gradient(circle at 86% 0, rgba(38, 111, 129, 0.52), transparent 28%),
+    repeating-linear-gradient(102deg, rgba(205, 236, 240, 0.04) 0 1px, transparent 1px 11px),
+    #0d171d;
 }
 
 .project-layout {

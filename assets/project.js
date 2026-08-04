@@ -127,7 +127,7 @@ if (!project) {
       <p class="project-nav"><a href="./index.html#projects">Back to projects</a></p>
       <section class="project-hero">
         <span class="eyebrow">${project.type}</span>
-        <h1>${project.name}</h1>
+        <h1>${project.nameHtml || project.name}</h1>
         <p class="project-lede">${project.summary}</p>
         ${metrics}
       </section>

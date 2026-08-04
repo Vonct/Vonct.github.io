@@ -46,6 +46,12 @@ function renderProjects() {
             </div>
             <h3>${project.name}</h3>
             <p class="project-card-summary">${project.summary}</p>
+            ${project.cardVisual ? `
+              <figure class="project-card-visual">
+                <img src="${project.cardVisual.src}" alt="${project.cardVisual.alt}" loading="lazy" />
+                <figcaption>${project.cardVisual.label}<span>↗</span></figcaption>
+              </figure>
+            ` : ""}
             <div class="project-card-tags">
               ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
             </div>
