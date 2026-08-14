@@ -8,7 +8,7 @@ Gallery 目前覆盖 `LPTN / TNN / STNN / DSTNN` 四类方法。每一种具体�
 
 Result Agent 被直接嵌入 Model Gallery 和 Compare 页面。用户可以把一个或多个具体 stamp 拖入 Evidence Tray，也可以从 edition 或模型卡片使用“引用到 Agent”。发送问题时，系统会冻结该轮的 evidence 顺序：
 
-- `S1–S8` 对应本轮实际引用的模型实验
+- `S1-S8` 对应本轮实际引用的模型实验
 - 浏览器只发送 stamp ID，服务端从可信 evidence manifest 读取结果
 - 定量结论必须携带可点击引用，并能回查到指标与源报告
 - 下一轮增删 stamp 不会改变上一轮已经冻结的证据

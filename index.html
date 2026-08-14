@@ -3,69 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vonct | Projects</title>
+    <title>Vonct | AI systems and embedded intelligence</title>
     <meta
       name="description"
       content="Vonct 的个人作品集，展示电机温度建模、evidence-grounded AI agent、runtime engineering 与嵌入式 AI 系统。"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="theme-color" content="#eef1f2" />
+    <meta property="og:title" content="Vonct | AI systems and embedded intelligence" />
+    <meta property="og:description" content="梁浩明的个人作品集，记录 AI Agent、电机热建模与嵌入式智能系统。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./imgs/developer-avatar.png" />
+    <link rel="icon" href="./favicon.png" type="image/png" />
+    <link rel="preload" href="./assets/fonts/instrument-sans-regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./assets/fonts/instrument-sans-semibold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./assets/fonts/ibm-plex-mono-medium.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./imgs/developer-avatar.png" as="image" type="image/png" fetchpriority="high" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
     <div class="site-shell">
       <header class="site-header">
-        <a class="site-mark" href="./index.html">VONCT</a>
-        <nav class="site-nav">
+        <a class="site-mark" href="./index.html" aria-label="Vonct 首页">VONCT</a>
+        <nav class="site-nav" aria-label="主导航">
           <a href="#projects">Projects</a>
-          <a href="#profile">Profile</a>
+          <a href="#about">About</a>
+          <a href="https://github.com/Vonct" target="_blank" rel="noreferrer">GitHub</a>
         </nav>
       </header>
 
-      <main>
-        <section class="hero">
+      <main id="main-content">
+        <section class="hero" aria-labelledby="hero-title">
           <div class="hero-copy">
-            <p class="eyebrow">Selected work and ongoing systems</p>
-            <h1 id="hero-name">Your Name</h1>
+            <p class="hero-kicker">Hello, I'm <span id="hero-name"></span></p>
+            <h1 id="hero-title">Hello World</h1>
             <p class="hero-tagline" id="hero-tagline"></p>
-            <p class="hero-intro" id="hero-intro"></p>
           </div>
-          <aside class="hero-aside" id="profile">
-            <div class="aside-block">
-              <span class="aside-label">Profile</span>
-              <h2 id="profile-name"></h2>
-              <p id="profile-title"></p>
+          <img class="hero-avatar" src="./imgs/developer-avatar.png" alt="梁浩明的开发者头像插画" width="480" height="480" fetchpriority="high" />
+          <div class="hero-ribbon" aria-hidden="true">
+            <div class="ribbon-track">
+              <span>Build</span><i>✦</i><span>Research</span><i>✦</i><span>Code</span><i>✦</i><span>Repeat</span><i>✦</i>
+              <span>Build</span><i>✦</i><span>Research</span><i>✦</i><span>Code</span><i>✦</i><span>Repeat</span><i>✦</i>
             </div>
-            <div class="aside-block">
-              <span class="aside-label">Base</span>
-              <p id="profile-location"></p>
-            </div>
-            <div class="aside-block">
-              <span class="aside-label">Focus</span>
-              <ul class="plain-list" id="profile-focuses"></ul>
-            </div>
-            <div class="aside-block">
-              <span class="aside-label">Contact</span>
-              <div class="contact-stack">
-                <p class="contact-email" id="profile-email"></p>
-                <div class="link-list" id="profile-links"></div>
-              </div>
-            </div>
-          </aside>
+          </div>
         </section>
 
         <section class="section projects-section" id="projects">
           <div class="section-head">
-            <p class="eyebrow">Projects</p>
-            <h2>项目经历</h2>
+            <h2>Projects</h2>
+            <p>从模型证据到可运行工具，项目关注完整的问题链路。</p>
           </div>
           <div class="project-grid" id="project-grid"></div>
+          <p class="projects-more">更多项目加入中...</p>
+        </section>
+
+        <section class="about-section" id="about" aria-labelledby="about-title">
+          <div class="about-lead">
+            <p class="section-kicker">About</p>
+            <h2 id="about-title">我主要做嵌入式 AI 和 Agent 开发。</h2>
+          </div>
+          <div class="about-detail">
+            <p id="hero-intro"></p>
+            <div class="focus-list" id="profile-focuses"></div>
+          </div>
         </section>
       </main>
+
+      <footer class="site-footer">
+        <p><span id="profile-name"></span> / <span id="profile-location"></span></p>
+        <div id="profile-links"></div>
+      </footer>
     </div>
 
     <script type="module" src="./assets/home.js"></script>

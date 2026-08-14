@@ -1,15 +1,15 @@
 export const profile = {
-  name: " 梁浩明",
+  name: "梁浩明",
   title: "",
-  tagline: "嵌入式&AI 开发｜ AI-agent开发",
+  tagline: "嵌入式 AI、Agent 与真实系统。",
   intro:
-    "主要研究方向为嵌入式AI算法开发和AI-agent构建，热衷于将AI技术应用于实际场景，提升系统智能化水平。",
+    "关注嵌入式 AI 算法与 AI Agent 构建，把模型、工具与证据链带进真实研发场景。",
   location: "Shanghai, China",
-  email: " cidanta@163.com",
+  email: "cidanta@163.com",
   github: "https://github.com/Vonct",
   website: "",
   focuses: [
-    "AI agent building",
+    "AI Agent Building",
     "Motor Thermal Modeling",
     "Embedded AI Algorithm",
   ],

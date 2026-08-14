@@ -8,17 +8,14 @@ function renderProfile() {
   byId("hero-tagline").textContent = profile.tagline;
   byId("hero-intro").textContent = profile.intro;
   byId("profile-name").textContent = profile.name;
-  byId("profile-title").textContent = profile.title;
   byId("profile-location").textContent = profile.location;
-  byId("profile-email").textContent = profile.email;
 
   const focusList = byId("profile-focuses");
-  focusList.innerHTML = profile.focuses.map((item) => `<li>${item}</li>`).join("");
+  focusList.innerHTML = profile.focuses.map((item) => `<span>${item}</span>`).join("");
 
   const links = byId("profile-links");
   links.innerHTML = profile.links
-    .filter((item) => item.label.toLowerCase() !== "email")
-    .map((item) => `<a class="link-pill" href="${item.href}" target="_blank" rel="noreferrer">${item.label}</a>`)
+    .map((item) => `<a href="${item.href}" ${item.href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""}>${item.label}</a>`)
     .join("");
 }
 
@@ -32,32 +29,22 @@ function renderProjects() {
   grid.innerHTML = projects
     .map(
       (project) => `
-        <a class="project-card ${project.featured ? "is-featured" : ""} ${project.theme ? `theme-${project.theme}` : ""}" href="./project.html?slug=${encodeURIComponent(project.slug)}">
-          ${project.cover ? `
+        <a class="project-card ${project.featured ? "is-featured" : ""} ${project.theme ? `theme-${project.theme}` : ""} ${project.cardVisual ? "has-card-visual" : ""}" href="./project.html?slug=${encodeURIComponent(project.slug)}">
+          ${project.cover || project.cardVisual ? `
             <figure class="project-card-media">
-              <img src="${project.cover}" alt="${project.name} 项目界面" loading="${project.featured ? "eager" : "lazy"}" />
-              <figcaption><span>Featured system</span><b>Open case study ↗</b></figcaption>
+              <img src="${project.cover || project.cardVisual.src}" alt="${project.cardVisual?.alt || `${project.name} 项目界面`}" loading="lazy" />
             </figure>
           ` : ""}
           <div class="project-card-body">
             <div class="project-card-top">
-              <span class="project-card-meta">${project.type}</span>
+              <span class="project-card-index">${String(projects.indexOf(project) + 1).padStart(2, "0")}</span>
               <span class="project-card-meta">${project.year}</span>
             </div>
             <h3>${project.name}</h3>
             <p class="project-card-summary">${project.summary}</p>
-            ${project.cardVisual ? `
-              <figure class="project-card-visual">
-                <img src="${project.cardVisual.src}" alt="${project.cardVisual.alt}" loading="lazy" />
-                <figcaption>${project.cardVisual.label}<span>↗</span></figcaption>
-              </figure>
-            ` : ""}
-            <div class="project-card-tags">
-              ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
-            </div>
             <div class="project-card-footer">
-              <span>${project.status}</span>
-              <span class="arrow-link">Open</span>
+              <span>${project.type.split(" / ")[0]}</span>
+              <span class="arrow-link">View project <i aria-hidden="true">↗</i></span>
             </div>
           </div>
         </a>
@@ -68,3 +55,19 @@ function renderProjects() {
 
 renderProfile();
 renderProjects();
+
+if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.querySelectorAll(".project-card, .about-section").forEach((item) => item.classList.add("is-visible"));
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.14 },
+  );
+  document.querySelectorAll(".project-card, .about-section").forEach((item) => observer.observe(item));
+}
